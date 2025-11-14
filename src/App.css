@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-family: 'Press Start 2P', monospace;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+/* Zeke */
+/* Add this to your App.css file */
+
+#btn-main3d {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 8px;
+  background-color: #1e1e1e; /* A vibrant color for the top of the button */
+  color: white;
+  transition: all 0.1s ease; /* Smooth transition for the pressed effect */
+  width: 100px;
+  height: 100px;
+  border: 3px solid #d0b400;
+
+  /* 3D EFFECT: Box Shadow */
+  /* The first shadow is the "depth" or "side" of the 3D button */
+  box-shadow: 0 6px 0 0 #d0b400;
+
+  /* Ensure the button is not inline to apply the transform well */
+  display: inline-block;
+  
+  /* Prevent text selection */
+  user-select: none;
+}
+
+/* Effect when the button is actively being pressed */
+#btn-main3d:active {
+  /* Move the button down by the same amount as the shadow depth (6px) */
+  transform: translateY(6px); 
+  
+  /* Remove the shadow to make it look "pressed" into the page */
+  box-shadow: 0 0px 0 0 #4e53b4; 
+}
+
+/* Optional: Add a subtle hover effect */
+#btn-main3d:hover {
+  filter: brightness(1.1);
+}
+
+
+.leaderboard-title {
+  color: #d0b400; 
+  font-size: .9rem;
+  text-decoration: underline;
+  font-family: 'Press Start 2P', monospace;
+  text-align: center;
+}
+
+/* 2. Leaderboard Sub-Text (Item) Style */
+.leaderboard-item {
+  color: #f7e07a; /* Lighter color for readability */
+  font-size: 1.0rem;
+  padding: 5px 0;
+}
+
+/* Leaderboard table styling */
+table {
+  width: 100%;
+  max-width: 500px;
+  margin: 2rem auto;
+  border-collapse: collapse;
+  background-color: #1e1e1e;
+  color: #fdfdfd;
+}
+
+/* Table header */
+thead {
+  background-color: #2c2c2c;
+}
+
+th {
+  padding: 8px 12px;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 2px solid #d0b400;
+}
+
+/* Table rows */
+tbody tr {
+  border-bottom: 1px solid #444;
+}
+
+/* Table cells */
+td {
+  padding: 6px 12px;
+}
+
+/* Loading message */
+.leaderboard-item.text-center {
+  color: #aaa;
+  font-style: italic;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* === LOGIN FORM STYLING === */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fdfdfd;
+  font-family: 'Press Start 2P', monospace;
+  text-align: center;
+}
+
+.login-container h2 {
+  color: #d0b400;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 6px #d0b400aa;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 260px;
+  background: #1e1e1e;
+  padding: 2rem;
+  border: 2px solid #d0b400;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #d0b40040;
+}
+
+.login-form input {
+  background-color: #111;
+  color: #fdfdfd;
+  border: 2px solid #d0b400;
+  border-radius: 8px;
+  padding: 10px;
+  font-family: inherit;
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+.login-form input::placeholder {
+  color: #888;
+}
+
+.login-form button {
+  background-color: #d0b400;
+  color: #1e1e1e;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: bold;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 0 #a78d00;
+}
+
+.login-form button:hover {
+  filter: brightness(1.2);
+  transform: translateY(-2px);
+}
+
+.login-form button:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #a78d00;
+}
+
+.error {
+  color: #ff4d4d;
+  font-size: 0.6rem;
+  margin-top: 0.5rem;
+  text-shadow: 0 0 4px #ff4d4daa;
+}
+
+/* === LOGOUT BUTTON STYLING === */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.logout-btn {
+  position: fixed; /* stays in the same place when scrolling */
+  top: 1rem;
+  right: 1rem;
+  background-color: #d0b400;
+  color: #1e1e1e;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: bold;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 0 #a78d00;
+}
+
+.logout-btn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
+
+.logout-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #a78d00;
+}
