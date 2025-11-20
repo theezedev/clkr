@@ -252,3 +252,17 @@ td {
   transform: translateY(3px);
   box-shadow: 0 1px 0 #a78d00;
 }
+
+
+/* error login */
+.login-warn '🦄 Failed Login!', {
+            position:  "bottom-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+          };

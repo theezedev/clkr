@@ -4,7 +4,7 @@ Features
 
 Authentication Rework
 
--Create register form
+-Create register form (Cruz)
 -- name 3 characters
 -- need email
 - Forgot Password? 

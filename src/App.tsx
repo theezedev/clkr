@@ -18,7 +18,7 @@ function App() {
   const [leaderboardData, setLeaderboardData] = useState<LeaderboardItem[]>([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-
+  
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -50,6 +50,17 @@ function App() {
     }
   }
 
+      /* error login */
+       async function errorLogin(){
+        const notify = () => toast("Wow so easy!");
+
+          return (
+         <div>
+        <button onClick={notify}>Notify!</button>
+        <ToastContainer />
+          </div>
+       );
+      }
   
   async function handleLogout() {
     pb.authStore.clear();
