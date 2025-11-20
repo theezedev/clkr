@@ -3,6 +3,7 @@ import "./App.css";
 import pb from "./pocketbase";
 import Confetti from "react-confetti-boom";
 import LoginForm from "./components/LoginForm";
+import { ToastContainer, toast } from 'react-toastify';
 
 interface LeaderboardItem {
   id: string;
@@ -100,6 +101,7 @@ function App() {
         loading={loading}
         error={error}
       />
+      
     );
   }
 
@@ -157,6 +159,7 @@ function App() {
       ) : (
         <p className="leaderboard-item text-center">Loading leaderboard...</p>
       )}
+      
     </>
   );
 }
