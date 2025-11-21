@@ -8,7 +8,7 @@ interface LoginFormProps {
   setPassword: (password: string) => void;
   handleLogin: (e: React.FormEvent) => Promise<void>;
   loading: boolean;
-  errorLogin: String
+  error: String
 }
 
 const LoginForm: React.FC<LoginFormProps> = ({
@@ -18,7 +18,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
   setPassword,
   handleLogin,
   loading,
-  errorLogin,
+  error,
 }) => {
   return (
     <div className="login-container">
@@ -41,7 +41,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
         <button type="submit" disabled={loading}>
           {loading ? "Logging in..." : "Login"}
         </button>
-        {errorLogin && <p className="errorLogin">{errorLogin}</p>}
+        {error && <p className="error">{error}</p>}
       </form>
     </div>
   );

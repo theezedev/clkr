@@ -18,7 +18,7 @@ function App() {
   const [leaderboardData, setLeaderboardData] = useState<LeaderboardItem[]>([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  
+  const [toast, settoast]= useState("");
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -34,20 +34,20 @@ function App() {
 
    /* error login */
        async function errorLogin(){
-        const notify = () => toast("Login Error!");
-
-          return (
-         <div>
-        <button onClick={notify}>Notify!</button>
-        <ToastContainer />
-          </div>
-       );
-      }  
+       
+         return (
+        <div>
+         {/* <button className="submit" onClick={errorLogin}>errorLogin</button> */}
+         <ToastContainer />
+           </div>
+        );
+       }  
 
   async function handleLogin(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
     setError("");
+    settoast("Login Error!");
 
     try {
       const authData = await pb.collection("users").authWithPassword(email, password);
@@ -56,9 +56,9 @@ function App() {
       // fetchLeaderboard();
     } catch (err: any) {
       // setError("Invalid login credentials");
-      errorLogin
+      errorLogin()
     } finally {
-      // setLoading(false);
+      setLoading(false);
     }
   }
 
@@ -112,7 +112,7 @@ function App() {
         setPassword={setPassword}
         handleLogin={handleLogin}
         loading={loading}
-        errorLogin={error}
+        error={error}
       />
       
     );
