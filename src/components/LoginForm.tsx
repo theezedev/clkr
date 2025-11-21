@@ -1,5 +1,6 @@
 import React from "react";
 
+
 interface LoginFormProps {
   email: string;
   setEmail: (email: string) => void;
@@ -7,7 +8,7 @@ interface LoginFormProps {
   setPassword: (password: string) => void;
   handleLogin: (e: React.FormEvent) => Promise<void>;
   loading: boolean;
-  error: string;
+  errorLogin: String
 }
 
 const LoginForm: React.FC<LoginFormProps> = ({
@@ -17,7 +18,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
   setPassword,
   handleLogin,
   loading,
-  error,
+  errorLogin,
 }) => {
   return (
     <div className="login-container">
@@ -40,7 +41,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
         <button type="submit" disabled={loading}>
           {loading ? "Logging in..." : "Login"}
         </button>
-        {error && <p className="error">{error}</p>}
+        {errorLogin && <p className="errorLogin">{errorLogin}</p>}
       </form>
     </div>
   );

@@ -32,6 +32,18 @@ function App() {
     }
   }, []);
 
+   /* error login */
+       async function errorLogin(){
+        const notify = () => toast("Login Error!");
+
+          return (
+         <div>
+        <button onClick={notify}>Notify!</button>
+        <ToastContainer />
+          </div>
+       );
+      }  
+
   async function handleLogin(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
@@ -44,23 +56,13 @@ function App() {
       // fetchLeaderboard();
     } catch (err: any) {
       // setError("Invalid login credentials");
-      console.error("Login error:", err);
+      errorLogin
     } finally {
       // setLoading(false);
     }
   }
 
-      /* error login */
-       async function errorLogin(){
-        const notify = () => toast("Wow so easy!");
-
-          return (
-         <div>
-        <button onClick={notify}>Notify!</button>
-        <ToastContainer />
-          </div>
-       );
-      }
+     
   
   async function handleLogout() {
     pb.authStore.clear();
@@ -110,7 +112,7 @@ function App() {
         setPassword={setPassword}
         handleLogin={handleLogin}
         loading={loading}
-        error={error}
+        errorLogin={error}
       />
       
     );
